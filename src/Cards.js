@@ -40,11 +40,12 @@ const Cards = () => {
   }
 
   const renderCards = () => {
-    // if (loading) return <p>Loading</p>;
+    if (loading) return <p>Loading</p>;
     return cards.map((card) => (
       <Card
         key={card.id}
         question={card.question}
+        answer={card.answer}
       />
     ))
   }
