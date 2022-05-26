@@ -1,5 +1,6 @@
 import { useState, useEffect} from "react";
 import Card from "./Card";
+import InputForm from "./InputForm";
 
 const fakeAPICall = (url) => {
   const cards = [
@@ -26,6 +27,11 @@ const Cards = () => {
   useEffect(()=>{
     getCards();
   }, [])
+
+  const addCard = (card)=>{
+    let newCards = [...cards, card]
+    setCards(newCards)
+  }
 
   const getCards = async () => {
     setLoading(true)
@@ -54,6 +60,7 @@ const Cards = () => {
       <div className="cards">
         <h1>Cards Go Here</h1>
         <div>{renderCards()}</div>
+        <InputForm addCard = {addCard}/>
       </div>
     )
   }
