@@ -16,14 +16,14 @@ const InputForm = (props)=>{
 
   return (
     <form onSubmit={handleSubmit}>
-      <p>Enter Question</p>
+      <p>Enter Question:</p>
       <input value={question} onChange={(input)=> setQuestion(input.target.value)}/>
-      <p>Enter Answer</p>
+      <p>Enter Answer:</p>
       <input value={answer} onChange={(input)=> setAnswer(input.target.value)}/>
-      <p>Enter ID</p>
+      <p>Enter ID:</p>
       <input value={id} onChange={(input)=> setID(input.target.value)}/>
       <br></br>
-      <button type="submit">Submit</button>
+      <button className="submit" type="submit">Submit</button>
     </form>
   )
 }

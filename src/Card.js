@@ -7,7 +7,7 @@ const Card = (props)=>{
       <p>{props.question}</p>
       <button onClick={()=>setShowAnswer(!showAnswer)}>Show Answer</button>
       {showAnswer && (<p>{props.answer}</p>)}
-      <button onClick={()=> props.deleteCard(props.id)}>Remove</button>
+      <button className="remove" onClick={()=> props.deleteCard(props.id)}>Remove</button>
     </div>
   )
 }

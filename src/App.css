@@ -16,3 +16,15 @@
 h1 {
   padding: 10px;
 }
+
+form {
+  margin: 10px;
+}
+
+.submit {
+  margin-top: 10px;
+}
+
+.remove {
+  margin-left: 10px;
+}

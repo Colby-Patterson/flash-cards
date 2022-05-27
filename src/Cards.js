@@ -15,7 +15,7 @@ const fakeAPICall = (url) => {
       } else {
         resolve({ data: cards })
       }
-    }, 3000)
+    }, 2500)
   })
 };
 
@@ -34,9 +34,20 @@ const Cards = () => {
   }
 
   const deleteCard = (id)=>{
-    let newCards = cards.filter((card) => card.id !== id);
+    console.log(cards)
+    let newCards = cards.filter((card) => {
+    console.log('Card', card)
+    console.log('card.id', card.id)
+    console.log('id', id)
+    return card.id !== id
+  });
     setCards(newCards)
   }
+
+//   const updateCard = (id, change) => {
+//     let newCards = cards.map(card=> card.id === id ? {...card, card.change: change} : card)
+//     setCards(newCards)
+// }
 
   const getCards = async () => {
     setLoading(true)
@@ -58,14 +69,16 @@ const Cards = () => {
         question={card.question}
         answer={card.answer}
         deleteCard={deleteCard}
+        id={card.id}
       />
     ))
   }
 
     return (
       <div className="cards">
-        <h1>Cards Go Here</h1>
+        <h1>Flash Cards</h1>
         <div>{renderCards()}</div>
+        <p>Add a card</p>
         <InputForm addCard = {addCard}/>
       </div>
     )
