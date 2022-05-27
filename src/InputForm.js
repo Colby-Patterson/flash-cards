@@ -22,6 +22,7 @@ const InputForm = (props)=>{
       <input value={answer} onChange={(input)=> setAnswer(input.target.value)}/>
       <p>Enter ID</p>
       <input value={id} onChange={(input)=> setID(input.target.value)}/>
+      <br></br>
       <button type="submit">Submit</button>
     </form>
   )

@@ -33,6 +33,11 @@ const Cards = () => {
     setCards(newCards)
   }
 
+  const deleteCard = (id)=>{
+    let newCards = cards.filter((card) => card.id !== id);
+    setCards(newCards)
+  }
+
   const getCards = async () => {
     setLoading(true)
     try {
@@ -52,6 +57,7 @@ const Cards = () => {
         key={card.id}
         question={card.question}
         answer={card.answer}
+        deleteCard={deleteCard}
       />
     ))
   }
